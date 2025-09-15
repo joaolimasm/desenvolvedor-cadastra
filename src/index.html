@@ -1,19 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desenvolvedor Cadastra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desenvolvedor Cadastra</title>
-  <link rel="stylesheet" href="main.css" />
-</head>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span>Cadastra</span>
+        </div>
+        <div style="position: relative; display: flex; align-items: center">
+          <img src="img/image 3.svg" alt="Cadeado" class="logo-lock" />
+          <span class="cart-badge" id="cart-badge" style="display: none"
+            >0</span
+          >
+        </div>
+      </div>
+    </header>
 
-<body>
+    <div class="mobile-filters" style="display: none">
+      <button id="filter-btn">Filtrar</button>
+      <button id="sort-btn">Ordenar</button>
+    </div>
 
-</body>
-<h1>Desafio Cadastra</h1>
-
-<script src="bundle.js"></script>
-
+    <div class="container">
+      <aside class="sidebar">
+        <h1>Blusas</h1>
+        <div class="filter-section">
+          <h3>CORES</h3>
+          <ul class="color-filters">
+            <li>
+              <input type="checkbox" id="amarelo" /><label for="amarelo"
+                >Amarelo</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="azul" /><label for="azul">Azul</label>
+            </li>
+            <li>
+              <input type="checkbox" id="branco" /><label for="branco"
+                >Branco</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="cinza" /><label for="cinza"
+                >Cinza</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="laranja" /><label for="laranja"
+                >Laranja</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="preto" /><label for="preto"
+                >Preto</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="rosa" /><label for="rosa">Rosa</label>
+            </li>
+          </ul>
+        </div>
+        <div class="filter-section">
+          <h3>TAMANHOS</h3>
+          <div class="size-filters">
+            <button class="size-btn">P</button>
+            <button class="size-btn">M</button>
+            <button class="size-btn">G</button>
+            <button class="size-btn">GG</button>
+            <button class="size-btn">U</button>
+            <button class="size-btn">36</button>
+            <button class="size-btn">38</button>
+            <button class="size-btn">40</button>
+            <button class="size-btn">36</button>
+            <button class="size-btn">38</button>
+            <button class="size-btn">40</button>
+          </div>
+        </div>
+        <div class="filter-section">
+          <h3>FAIXA DE PREÇO</h3>
+          <ul class="price-filters">
+            <li>
+              <input type="checkbox" id="price1" /><label for="price1"
+                >de R$0 até R$50</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="price2" /><label for="price2"
+                >de R$51 até R$150</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="price3" /><label for="price3"
+                >de R$151 até R$300</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="price4" /><label for="price4"
+                >de R$301 até R$500</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="price5" /><label for="price5"
+                >a partir de R$ 500</label
+              >
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <main class="main-content">
+        <div class="sort-container">
+          <label for="sort">Ordenar por:</label>
+          <select id="sort">
+            <option value="">Selecionar</option>
+            <option value="price-asc">Menor preço</option>
+            <option value="price-desc">Maior preço</option>
+            <option value="newest">Mais recentes</option>
+          </select>
+        </div>
+        <div class="product-grid" id="product-grid"></div>
+        <div class="load-more-container">
+          <button class="load-more-btn">CARREGAR MAIS</button>
+        </div>
+      </main>
+    </div>
+    <footer class="footer">CADASTRA: IMPLANTAÇÃO DE E-COMMERCE VTEX</footer>
+    <aside class="mobile-sidebar" id="mobile-sidebar">
+      <div class="mobile-sidebar-header">
+        <span class="mobile-sort-title">FILTROS</span>
+        <span class="mobile-sidebar-close" id="mobile-sidebar-close"
+          >&times;</span
+        >
+      </div>
+      <div class="mobile-sidebar-content">
+        <div class="filter-section">
+          <h3>CORES</h3>
+          <ul class="color-filters">
+            <li>
+              <input type="checkbox" id="amarelo-m" /><label for="amarelo-m"
+                >Amarelo</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="azul-m" /><label for="azul-m"
+                >Azul</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="branco-m" /><label for="branco-m"
+                >Branco</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="cinza-m" /><label for="cinza-m"
+                >Cinza</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="laranja-m" /><label for="laranja-m"
+                >Laranja</label
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="filter-section">
+          <h3>TAMANHOS</h3>
+          <div class="size-filters">
+            <button class="size-btn">P</button>
+            <button class="size-btn">M</button>
+            <button class="size-btn">G</button>
+            <button class="size-btn">GG</button>
+            <button class="size-btn">U</button>
+            <button class="size-btn">36</button>
+            <button class="size-btn">38</button>
+            <button class="size-btn">40</button>
+          </div>
+        </div>
+        <div class="filter-section">
+          <h3>FAIXA DE PREÇO</h3>
+          <ul class="price-filters">
+            <li>
+              <input type="checkbox" id="price1-m" /><label for="price1-m"
+                >de R$0 até R$50</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="price2-m" /><label for="price2-m"
+                >de R$51 até R$150</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="price3-m" /><label for="price3-m"
+                >de R$151 até R$300</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="price4-m" /><label for="price4-m"
+                >de R$301 até R$500</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="price5-m" /><label for="price5-m"
+                >a partir de R$ 500</label
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-sidebar-buttons">
+          <button id="clear-filters">Limpar</button>
+          <button id="apply-filters">Filtrar</button>
+        </div>
+      </div>
+    </aside>
+    <aside class="mobile-sort-sidebar" id="mobile-sort-sidebar">
+      <div class="mobile-sort-header">
+        <span class="mobile-sort-title">ORDENAR</span>
+        <span class="mobile-sort-close" id="mobile-sort-close">&times;</span>
+      </div>
+      <hr />
+      <div class="mobile-sort-options">
+        <div class="mobile-sort-option" data-sort="newest">Mais recente</div>
+        <div class="mobile-sort-option" data-sort="price-desc">Maior preço</div>
+        <div class="mobile-sort-option" data-sort="price-asc">Menor preço</div>
+      </div>
+    </aside>
+  </body>
+  <script src="bundle.js"></script>
 </html>

@@ -1,76 +1,71 @@
-# Venha ser um desenvolvedor da Cadastra
+# Desenvolvedor Cadastra
 
-Olá! Somos a Cadastra, uma Next-Gen Company que oferece soluções globais em marketing, tecnologia, estratégia de negócios, commerce, dados e analytics. Este desafio é voltado para o nosso Centro de Excelência (COE) de Commerce, especializado em implantação, migração, evolução e otimização de e-commerce.  Contamos com escritórios em 5 países, mas num formato de trabalho 100% home office.
+Este projeto é um desafio para novos colaboradores da Cadastra, consistindo em um e-commerce simples com frontend em TypeScript/SCSS e backend simulado com JSON Server.
 
-Estamos em busca de Pessoas Desenvolvedoras `Front-end`, com sólidos conhecimentos em HTML, CSS e TS para projetar interfaces e entregar a melhor experiência para os consumidores visando sempre a otimização do código e agilidade no desenvolvimento.
+## Pré-requisitos
 
-## O que procuramos
+- [Node.js](https://nodejs.org/) (versão 14 ou superior)
+- [npm](https://www.npmjs.com/)
 
-### Requisitos Obrigatórios
+## Instalação
 
-- Html5, css3;
-- Javascript/Typescript;
-- Consumo de APIs.
-- Versionamento Git;
-- Grunt/gulp;
-- Sass/less;
-- Nodejs
-- Sites responsivos;
-- Iniciativa, criatividade e colaboração;
-- Boas práticas: reutilização de código, semântica, organização, performance.
+Clone o repositório e instale as dependências:
 
-### Desejáveis:
+```sh
+git clone https://github.com/joaolimasm/desenvolvedor-cadastra.git
+cd desenvolvedor-cadastra
+npm install
+```
 
-- Experiência com algum CMS
-- Conhecimento/Experiência em Vtex
-- Nodejs
+## Scripts Disponíveis
 
-----
+- `npm run dev` — Inicia o frontend em modo desenvolvimento usando Gulp (compila SCSS, TypeScript e serve com live reload).
+- `npm run server` — Inicia o backend com JSON Server usando o arquivo `db.json` na porta 5000.
+- `npm start` — Inicia frontend (`dev`) e backend (`server`) em paralelo, com a variável de ambiente `SERVER_API` apontando para `http://localhost:5000`.
+- `npm run start:gp` — Alternativa ao `start`, sem uso do `cross-env`.
 
-## Como se candidatar a vaga
+## Como rodar o backend (JSON Server)
 
-- [Crie um fork desse projeto;](https://github.com/Cadastra-Next-Gen-Company/desenvolvedor-cadastra/fork)
-- No seu fork, codifique o layout seguindo as instruções abaixo;
-- Atualize o readme com as instruções necessárias para rodar o seu código;
-- Adicione também seu e-mail de contato ao readme do projeto ( caso seu e-mail do github esteja privado )
-- envie para [vinicius.delfino@cadastra.com](mailto:vinicius.delfino@cadastra.com?subject=Vaga%20DEV%20-%20Cadastra) com cópia para [andresa.klein@cadastra.com](mailto:andresa.klein?subject=Vaga%20DEV%20-%20Cadastra)
- 
+O backend simula uma API REST usando o arquivo `db.json`.
 
-**obs.**: link do projeto [github.com/Cadastra-Next-Gen-Company/desenvolvedor-cadastra](https://github.com/Cadastra-Next-Gen-Company/desenvolvedor-cadastra)
+Para iniciar o servidor:
 
-### Instruções para o teste
+```sh
+npm run server
+```
 
-O layout se encontra no [figma](https://www.figma.com/file/Z5RCG3Ewzwm7XIPuhMUsBZ/Desafio-Cadastra?type=design&node-id=0%3A1&mode=design&t=A0G2fRjMSrcQjchw-1).
+O servidor ficará disponível em: [http://localhost:5000/products](http://localhost:5000/products)
 
-### Dependências
+## Como rodar o frontend
 
-O projeto possui um setup pronto no qual há a necessidade de possuir o nodejs instalado na versão 14 ou superior.
+Para iniciar o frontend em modo desenvolvimento:
 
-Para instalar as dependências só é preciso executar o comando: `npm install`
+```sh
+npm run dev
+```
 
-O dar start no server e nos processos para desenvolvimento é necessário rodar o comando: `npm start `
+Ou, para rodar o frontend e o backend juntos (recomendado):
 
-Uma ver que o comando é dado ele irá levantar 2 servidores, sendo eles:
- - um para acessar o front-end que roda na porta 3000. No qual pode ser acessado pela url: http://localhost:3000
- - um para o json-server que irá export uma api com a lista de produtos que roda na porta 5000. Para acessar os produtos é na url:  http://localhost:5000/products
+```sh
+npm start
+```
 
-### Objetivo
+Isso irá:
 
-O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front end, por isso pedimos que não utilize nenhum framework, porem caso deseje utilizar frameworks como react, é possível adicionar ao setup.
-### Obrigatório
+- Rodar o JSON Server em [http://localhost:5000](http://localhost:5000)
+- Rodar o frontend em [http://localhost:3000](http://localhost:3000) (ou outra porta disponível)
 
-- HTML5 e CSS3
-- Typescript
-- Requisição a API para obter os produtos
-- Funcionalidade: Filtrar produtos por cor, tamanho e preço.
-- Funcionalidade: Adicionar produto ao carrinho.
-- Funcionalidade: Carregar mais produtos.
-- Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes ;
-- Responsividade
+## Estrutura do Projeto
 
-#### Bônus
+- `src/` — arquivos fonte (HTML, SCSS, TypeScript, imagens)
+- `db.json` — base de dados fake para o JSON Server
+- `dist/` — arquivos gerados para produção/desenvolvimento
 
-- Typescript com clean code
-- Adição de processo no gulp para otimizar imagens
+## Observações
 
-##### Dúvidas: [vinicius.delfino@cadastra.com](mailto:vinicius.delfino@cadastra.com?subject=Dúvida%20Vaga%20DEV%20-%20Cadastra)
+- O frontend consome a API em `http://localhost:5000/products`.
+- Para build de produção, utilize (caso exista o script):
+  ```sh
+  npm run build
+  ```
+

@@ -2,6 +2,9 @@ const path = require("path");
 const webpack = require("webpack");
 
 module.exports = (paths) => ({
+   resolve: {
+    extensions: [".ts", ".js"],
+  },
   entry: {
     main: path.resolve(__dirname, paths.scripts.src),
   },
@@ -15,7 +18,7 @@ module.exports = (paths) => ({
       {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /(node_modules|bower_components)/,
-        include: path.resolve(__dirname, paths.scripts.src),
+        include: path.resolve(__dirname, "src/ts"), 
         use: "ts-loader",
       },
     ],
